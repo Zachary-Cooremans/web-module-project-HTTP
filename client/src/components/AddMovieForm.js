@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import axios from 'axios';
 
 const AddMovieForm = (props) => {
     const { push } = useHistory();
-	const { id } = useParams()
 
 	const [movie, setMovie] = useState({
 		title:"",
@@ -66,7 +65,6 @@ const AddMovieForm = (props) => {
 						<label>Description</label>
 						<textarea value={description} onChange={handleChange} name="description" className="form-control"></textarea>
 					</div>
-									
 				</div>
 				<div className="modal-footer">			    
 					<input type="submit" className="btn btn-info" value="Add"/>
